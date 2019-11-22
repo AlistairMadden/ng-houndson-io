@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-houndson-io';
+  name:string = 'Alistair John Madden';
+
+  constructor() {
+    this.changeName('AJJM');
+    console.log('some debug');
+  }
+
+  changeName(name:string):void {
+    this.name = name;
+  }
 }
