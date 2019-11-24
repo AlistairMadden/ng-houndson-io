@@ -23,8 +23,17 @@ export class TodoService {
     return this.http.get<Todo[]>(`${this.url}${this.getQuery}`);
   }
 
+  private constructDetailURL(id:number):string {
+    return `${this.url}/${id}`
+  }
+
   toggleCompleted(todo:Todo):Observable<any> {
-    const url = `${this.url}/${todo.id}`
-    return this.http.put(url, todo, httpOptions)
+    const url = this.constructDetailURL(todo.id);
+    return this.http.put(url, todo, httpOptions);
+  }
+
+  deleteTodo(todo:Todo):Observable<Todo> {
+    const url = this.constructDetailURL(todo.id);
+    return this.http.delete<Todo>(url, httpOptions);
   }
 }
