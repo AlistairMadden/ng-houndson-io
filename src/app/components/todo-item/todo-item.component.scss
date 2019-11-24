@@ -1,0 +1,21 @@
+.todo {
+    padding: 1rem;
+    > * {
+        margin: 0 0.5rem;
+    }
+}
+
+.completed {
+    .todo_title {
+        text-decoration: line-through;
+    }
+}
+
+.todo_checkbox {
+    vertical-align: middle;
+}
+
+.todo_title {
+    vertical-align: middle;
+    margin-bottom: 0;
+}

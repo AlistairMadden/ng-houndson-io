@@ -14,4 +14,22 @@ export class TodoItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Set classes on top level component
+  setClasses() {
+    let classes = {
+      'todo': true,
+      'completed': this.todo.completed
+    };
+
+    return classes;
+  }
+
+  onSelect() {
+    this.todo.completed = !this.todo.completed;
+  }
+
+  onDelete() {
+    console.log(this.todo);
+  }
+
 }
